@@ -4,7 +4,7 @@ A supervised hallucination detection system for text and image modalities, built
 
 This work was completed as a group research project for the MSc Data Science and AI programme at the University of Liverpool (Semester 1, 2025).
 
-> **Code release pending.** This repository currently contains the project write-up and results. The implementation code is being prepared for release and will be added shortly.
+> **Repository scope.** This repository contains the project write-up, results, and the image-pipeline training script (`model_training.py`). Other components of the pipeline — text preprocessing, POPE-style question generation, the TinyBERT training code, and SEEM-based image annotation — are not included in this public release.
 
 ## Overview
 
@@ -79,6 +79,13 @@ Performance varied by object category, with frequent COCO classes (e.g., person,
 
 > Note: text-modality figures are reported on a held-out test set; image-modality figures are best validation results. A held-out test evaluation for the image pipeline is planned as part of the code release.
 
+## Repository Contents
+
+- `model_training.py` — image-pipeline training script (CLIP-ViT-B/16 + binary classifier). Implementation authored by Krishna Kethineni Ramesh.
+- `README.md` — project write-up and results
+
+The script expects a POPE-style annotation JSON file (`--train_annotations`, `--val_annotations`) and an image folder (`--image_folder`). The annotation generation code and dataset are not included in this public release.
+
 ## Team and Contributions
 
 This was a group project. Team members:
@@ -89,9 +96,7 @@ This was a group project. Team members:
 - Krishna Kethineni Ramesh
 - Preksha Khera
 
-**My contribution (Harsha Vardhan Arangi):** designed and implemented the text and image detection pipelines — preprocessing, POPE-style QA generation, TinyBERT fine-tuning, and evaluation — and co-authored the project report.
-
-<!-- TODO: Update the contribution line above if your role on the image pipeline was different (e.g., shared with a teammate, or text-only). Be precise — recruiters value honest scoping. -->
+**My contribution (Harsha Vardhan Arangi):** designed and implemented the text and image detection pipelines — preprocessing, POPE-style QA generation, TinyBERT fine-tuning, and evaluation — and co-authored the project report.Led the dataset collection effort, contributed to the project's conceptual framing (overview of multimodal LLMs, problem statement on hallucination, motivation for detection), assisted teammates with code where needed, and co-authored the project report.
 
 ## References
 
